@@ -58,11 +58,11 @@ function loadPage() {
 toggleScrolling(true);
 images.forEach((e) => {
 	e.onload = () => {
-		console.log("loaded");
 		loadedImages++;
 		if (loadedImages === images.length) {
 			loadPage();
 			document.querySelector(".loading-page").classList.toggle("loaded");
 		}
+		console.log(loadedImages, images.length);
 	};
 });
