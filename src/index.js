@@ -12,6 +12,7 @@ gsap.from(".square button", {
 gsap.from("nav", { duration: 1, y: "-100%", opacity: 0 });
 AOS.init({
 	duration: 1000,
+	mirror: false,
 });
 new Waypoint({
 	element: document.getElementById("risk"),
