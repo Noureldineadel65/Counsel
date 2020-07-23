@@ -1,6 +1,3 @@
-let loadedImages = 0;
-const images = document.querySelectorAll("img");
-const addLoaded = () => loadedImages++;
 function toggleScrolling(bool) {
 	document.querySelector("html").style.overflowY = bool ? "hidden" : "auto";
 	document.querySelector("body").style.overflowY = bool ? "hidden" : "auto";
@@ -56,14 +53,8 @@ function loadPage() {
 	});
 }
 toggleScrolling(true);
-images.forEach((e) => {
-	e.onload = () => {
-		loadedImages++;
-		if (loadedImages === images.length) {
-			loadPage();
-			document.querySelector(".loading-page").classList.toggle("loaded");
-		}
-		console.log(loadedImages, images.length);
-	};
-});
-console.log(images);
+
+window.onload = function () {
+	loadPage();
+	document.querySelector(".loading-page").classList.toggle("loaded");
+};
