@@ -66,3 +66,4 @@ images.forEach((e) => {
 		console.log(loadedImages, images.length);
 	};
 });
+console.log(images);
